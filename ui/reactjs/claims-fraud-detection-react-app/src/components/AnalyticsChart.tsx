@@ -13,5 +13,7 @@ export default function AnalyticsChart({ data, type = "bar" }: { data: Analytics
     borderWidth: type === "line" ? 3 : 1, tension: .35, fill: type === "line", pointBackgroundColor: "#2563eb", pointRadius: 4
   }))};
   const options = { responsive: true, maintainAspectRatio: false, plugins:{legend:{display:type==="doughnut",position:"bottom" as const}}, scales:type==="doughnut"?{}:{y:{beginAtZero:true,grid:{color:"#eef2f7"}},x:{grid:{display:false}}} };
-  return <div className="chart">{type === "line" ? <Line data={colored} options={options} /> : type === "doughnut" ? <Doughnut data={colored} options={options} /> : <Bar data={colored} options={options} />}</div>;
+  return <div className="chart">{type === "line" ? <Line data={colored} options={options} /> : type === "doughnut" ? <Doughnut data={colored} options={options} /> : 
+    <Bar data={colored} options={options} />}
+  </div>;
 }
